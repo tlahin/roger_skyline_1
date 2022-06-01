@@ -60,12 +60,12 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
 # Changing SSH ports
 
-To edit the SSH settings we use command: `sudo vim /etc/ssh/sshd_config`
+  To edit the SSH settings we use command: `sudo vim /etc/ssh/sshd_config`
 
-On row number 15 there is `#Port 22` as a default.
-Uncomment it and change the port number according to your liking.
+  On row number 15 there is `#Port 22` as a default.
+  Uncomment it and change the port number according to your liking.
 
-Restart ssh service: `sudo service ssh restart`.
+  Restart ssh service: `sudo service ssh restart`.
 
 # SSH access with public keys and ROOT access
 
@@ -79,18 +79,20 @@ Restart ssh service: `sudo service ssh restart`.
   Editing `/etc/ssh/sshd_config` to:
   
   Disabling direct root access.
-  `34 PermitRootLogin no`.
+    `34 PermitRootLogin no`.
   
   Public Key Authentication.
-  `39 PubkeyAuthentication yes`.
+    `39 PubkeyAuthentication yes`.
   
   Location of valid keys.
-  `42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2`.
+    `42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2`.
   
   By setting PasswordAuthentication to no we require public key aswell as login to gain access to the system.
-  `58 PasswordAuthentication no`.
+    `58 PasswordAuthentication no`.
   
   No empty passwords
-  `59 PermitEmptyPasswords no`.
+    `59 PermitEmptyPasswords no`.
   
-  # Firewall
+# Firewall
+  
+  Tutorial to get started: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands   
