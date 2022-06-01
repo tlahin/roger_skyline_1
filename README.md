@@ -42,9 +42,9 @@ This subject aims to initiate you to the basics of system and network administra
   
   Since we want our CIDR to be /30 our subnet mask has to be 255.255.255.252
   
-  for my IP I choce 10.13.254.32 from the 64 different network addresses.
+  For my IP I choce 10.13.254.32 from the 64 different network addresses.
   
-  Now we have all the values we need. Using `sudo vim /etc/network/interface` to edit the configuration file,
+  Now we have all the values we need. Using `sudo vim /etc/network/interface` to edit the configuration file, 
   we change our chosen networks settings.
 
   example:
@@ -56,7 +56,7 @@ This subject aims to initiate you to the basics of system and network administra
   New settings we just figured out
   ![image](https://user-images.githubusercontent.com/79833061/171382140-377f25f5-3fc8-4461-93ec-dc76bd1aed3e.png)
   
-  after saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
+  After saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
   
 # How to change the SSH port
 
