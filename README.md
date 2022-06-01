@@ -76,22 +76,19 @@ Restart ssh service: `sudo service ssh restart`.
   
   Also manually copying your key from `~/.ssh/id_rsa.pub` to the target location `~/.ssh/authrized_keys` works.
 
-# Setup a Firewall
-
-# Set a DoS protection
-
-Protecting against port scans
-
-Disable unnecessary services
-
-A script that updates all the packages
-
-Monitor crontab changes
-
-Web Part
-
-Creating a self-signed SSL
-
-Testing DoS with slowloris attack to Apache server
-
-Deployment script
+  Disabling direct root access
+  `34 PermitRootLogin no`.
+  
+  Public Key Authentication
+  `39 PubkeyAuthentication yes`.
+  
+  Location of valid keys
+  `42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2`.
+  
+  By setting PasswordAuthentication to no we require public key aswell as login to gain access to the system
+  `58 PasswordAuthentication no`.
+  
+  No empty passwords
+  `59 PermitEmptyPasswords no`.
+  
+  # Firewall
