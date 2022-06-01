@@ -58,15 +58,20 @@ This subject aims to initiate you to the basics of system and network administra
   
   After saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
   
-# How to change the SSH port
+# Changing SSH ports
 
-Adding banner art when logging in
+To edit the SSH settings we use command: `sudo vim /etc/ssh/sshd_config`
 
-SSH access with public keys
+On row number 15 there is `#Port 22` as a default.
+Uncomment it and change the port number according to your liking.
 
-Setup a Firewall
+Restart ssh service: `sudo service ssh restart`.
 
-Set a DoS protection
+# SSH access with public keys
+
+# Setup a Firewall
+
+# Set a DoS protection
 
 Protecting against port scans
 
