@@ -7,7 +7,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
 
 # Installing Virtual Machine
   
-  I choce Debian since I used it in INIT aswell.
+  I chose Debian since I used it in INIT aswell.
   
   First task was to set 8 GB of disk size to the VM and atleast one partition to be 4.2 GB
   
