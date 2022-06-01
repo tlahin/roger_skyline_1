@@ -30,17 +30,17 @@ This subject aims to initiate you to the basics of system and network administra
 
 # Configuring static IP and a Netmask in \30
   
-  https://www.cyberciti.biz/faq/add-configure-set-up-static-ip-address-on-debianlinux/
+  An amazing guide: https://www.cyberciti.biz/faq/add-configure-set-up-static-ip-address-on-debianlinux/
   
-  `ip -c link show` will show available ethernet network interfaces
-  Look for the address of the network by using commnad `ip -c addr show nameoftheinterface`
+  `ip -c link show` will show available ethernet network interfaces.
+  Look for the address of the network by using command `ip -c addr show nameoftheinterface`.
   
   subnet calculator I used: https://www.calculator.net/ip-subnet-calculator.html
   
-  Gateway value is found with `ipconfig getoption en0 router` on your MAC
-  in my case it is 10.13.254.254.
+  Gateway value is found with `ipconfig getoption en0 router` on your MAC.
+  In my case it is 10.13.254.254.
   
-  since we want our CIDR to be /30 our subnet mask has to be 255.255.255.252
+  Since we want our CIDR to be /30 our subnet mask has to be 255.255.255.252
   
   for my IP I choce 10.13.254.32 from the 64 different network addresses.
   
