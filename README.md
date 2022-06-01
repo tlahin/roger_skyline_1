@@ -76,16 +76,18 @@ Restart ssh service: `sudo service ssh restart`.
   
   Also manually copying your key from `~/.ssh/id_rsa.pub` to the target location `~/.ssh/authrized_keys` works.
 
-  Disabling direct root access
+  Editing `/etc/ssh/sshd_config` to:
+  
+  Disabling direct root access.
   `34 PermitRootLogin no`.
   
-  Public Key Authentication
+  Public Key Authentication.
   `39 PubkeyAuthentication yes`.
   
-  Location of valid keys
+  Location of valid keys.
   `42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2`.
   
-  By setting PasswordAuthentication to no we require public key aswell as login to gain access to the system
+  By setting PasswordAuthentication to no we require public key aswell as login to gain access to the system.
   `58 PasswordAuthentication no`.
   
   No empty passwords
