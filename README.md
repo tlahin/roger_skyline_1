@@ -67,7 +67,14 @@ Uncomment it and change the port number according to your liking.
 
 Restart ssh service: `sudo service ssh restart`.
 
-# SSH access with public keys
+# SSH access with public keys and ROOT access
+
+  If you don't have an existing SSH key yet you can run command: `ssh-keygen -t rsa`.
+
+  Incase you have one already, you can run following command: `ssh-copy-id user@ip -p port`,
+  to copy it from your machine to the target location.
+  
+  Also manually copying your key from `~/.ssh/id_rsa.pub` to the target location `~/.ssh/authrized_keys` works.
 
 # Setup a Firewall
 
