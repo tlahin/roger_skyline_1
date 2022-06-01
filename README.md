@@ -3,7 +3,7 @@
 
 This subject aims to initiate you to the basics of system and network administration.
 
-!!!! what to do we do in the project
+We are going to be installing a Virtual Machine and deploying a simple website.
 
 # Installing Virtual Machine
   
