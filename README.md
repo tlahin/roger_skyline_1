@@ -87,7 +87,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   Location of valid keys.
     `42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2`.
   
-  By setting PasswordAuthentication to no we require public key aswell as login to gain access to the system.
+  Instead of using password to login to the system we want to use our public key, so we disable password authentication.
     `58 PasswordAuthentication no`.
   
   No empty passwords
