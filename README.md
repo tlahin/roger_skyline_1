@@ -116,3 +116,9 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   Installing fail2ban: `sudo apt-get install fail2ban`.
   
   Making a configuration file: `sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`.
+  
+# Portscan protection
+  
+  Insalling portsentry: `sudo apt-get install portsentry`.
+
+# Disable unused services
