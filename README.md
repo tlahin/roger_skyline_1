@@ -32,8 +32,8 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   An amazing guide: https://www.cyberciti.biz/faq/add-configure-set-up-static-ip-address-on-debianlinux/
   
-  `ip -c link show` will show available ethernet network interfaces.
-  Look for the address of the network by using command `ip -c addr show nameoftheinterface`.
+  `ip -c link show` will show available ethernet network interfaces. Note down the name of the <network>.
+  Look for the address of the network by using command `ip -c addr show <network>`.
   
   subnet calculator I used: https://www.calculator.net/ip-subnet-calculator.html
   
@@ -44,18 +44,14 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   For my IP I choce 10.13.254.32 from the 64 different network addresses available.
   
-  Now we have all the values we need. Using `sudo vim /etc/network/interface` to edit the configuration file, 
-  we change our chosen networks settings.
+  Now we have all the values we need.
+  We change our chocen networks settings in `/etc/network/interface`, in my case `enp0s3` to `auto`:
+  ![image](https://user-images.githubusercontent.com/79833061/171835158-2ae72f6a-ec43-4fe8-8da1-43a678fcea91.png).
+  
+  Then we want to create a configuration file for it: `sudo vim /etc/network/interface.d/<network>`.
+  In the file we want to write the values we just gathered:
+  ![image](https://user-images.githubusercontent.com/79833061/171835962-865c86f7-58ef-42fd-b22b-4598bff73960.png).
 
-  example:
-  
-  Original 
-  ![image](https://user-images.githubusercontent.com/79833061/171382187-f7d31b32-94f0-49f8-88b0-5487abf3b7ba.png)
-
-  
-  New settings we just figured out
-  ![image](https://user-images.githubusercontent.com/79833061/171382140-377f25f5-3fc8-4461-93ec-dc76bd1aed3e.png)
-  
   After saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
   
 # Changing SSH ports
