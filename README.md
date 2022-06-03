@@ -42,7 +42,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   Since we want our CIDR to be /30 our subnet mask has to be 255.255.255.252
   
-  For my IP I choce 10.13.254.32 from the 64 different network addresses.
+  For my IP I choce 10.13.254.32 from the 64 different network addresses available.
   
   Now we have all the values we need. Using `sudo vim /etc/network/interface` to edit the configuration file, 
   we change our chosen networks settings.
@@ -65,7 +65,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   On row number 15 there is `#Port 22` as a default.
   Uncomment it and change the port number according to your liking.
   
-  `9212`.
+  I set my port to `9212`.
 
   Restart ssh service: `sudo service ssh restart`.
 
