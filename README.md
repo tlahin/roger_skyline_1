@@ -107,10 +107,10 @@ We are going to be installing a Virtual Machine and deploying a simple website.
 
    - Do not enable ufw, if you're using an SSH connection, before configuring it's settings. It might cause some trouble. :)
     
-  To begin, we want to make sure our SSH connection to the VM stays open by using a command: 
+  To begin, we want to make sure our SSH connection to the VM stays open by allowing the connection to the port: 
   `sudo ufw allow <portnumber>/tcp`.
   
   For later purposes we want to enable other connections aswell such as HTTP and HTTPS:
-  - `sudo ufw allow proto tcp from any to any port 80,443`, port 80 being HTTP and 443 HTTPS.
+  `sudo ufw allow proto tcp from any to any port 80,443`, port 80 being HTTP and 443 HTTPS.
   
 # DoS protection
