@@ -46,10 +46,12 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   Now we have all the values we need.
   We change our chocen networks settings in `/etc/network/interface`, in my case `enp0s3` to `auto`:
+  
   ![image](https://user-images.githubusercontent.com/79833061/171835158-2ae72f6a-ec43-4fe8-8da1-43a678fcea91.png).
   
   Then we want to create a configuration file for it: `sudo vim /etc/network/interface.d/<network>`.
   In the file we want to write the values we just gathered:
+  
   ![image](https://user-images.githubusercontent.com/79833061/171835962-865c86f7-58ef-42fd-b22b-4598bff73960.png).
 
   After saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
