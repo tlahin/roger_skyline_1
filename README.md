@@ -102,7 +102,8 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   Things to note! 💡
   
-    - You can see the status of UFW with a command: `sudo ufw status verbose`.
-    - Do not enable ufw, if you're using an SSH connection, before configuring it's settings. It will disconnect you.
+   - You can see the status of UFW with a command: `sudo ufw status verbose`.
+
+   - Do not enable ufw, if you're using an SSH connection, before configuring it's settings. It will disconnect you.
     
-    
+ 
