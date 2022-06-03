@@ -107,7 +107,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
 
    - Do not enable ufw, if you're using an SSH connection, before configuring it's settings. It will disconnect you.  :)
     
-  To begin, we want to make sure our SSH connection to the VM stays open, when we enable our firewall.
-  Using a command: `sudo ufw allow OpenSSH` or alternatively `sudo ufw allow <portnumber>`.
+  To begin, we want to make sure our SSH connection to the VM stays open, So by using a command: 
+  `sudo ufw allow OpenSSH` or alternatively `sudo ufw allow <portnumber>`.
   
   
