@@ -112,3 +112,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   `sudo ufw allow proto tcp from any to any port 80,443`, port 80 being HTTP and 443 being HTTPS.
   
 # DoS protection
+ 
+  Installing fail2ban: `sudo apt-get install fail2ban`.
+  
+  Making a configuration file: `sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`.
