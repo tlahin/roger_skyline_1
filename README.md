@@ -64,6 +64,8 @@ We are going to be installing a Virtual Machine and deploying a simple website.
 
   On row number 15 there is `#Port 22` as a default.
   Uncomment it and change the port number according to your liking.
+  
+  `9212`.
 
   Restart ssh service: `sudo service ssh restart`.
 
