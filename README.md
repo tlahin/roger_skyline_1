@@ -109,6 +109,6 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   `sudo ufw allow <portnumber>/tcp`.
   
   For later purposes we want to enable other connections aswell such as HTTP and HTTPS:
-  `sudo ufw allow proto tcp from any to any port 80,443`, port 80 being HTTP and 443 HTTPS.
+  `sudo ufw allow proto tcp from any to any port 80,443`, port 80 being HTTP and 443 being HTTPS.
   
 # DoS protection
