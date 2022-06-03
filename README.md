@@ -97,4 +97,12 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
 # Firewall
   
-  Tutorial to get started: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands   
+  Tutorial I found on UFW: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands.
+  UFW stands for uncomplicated firewall, it's included by default within Ubunty distributions.
+  
+  Things to note! 💡
+  
+    - You can see the status of UFW with a command: `sudo ufw status verbose`.
+    - Do not enable ufw, if you're using an SSH connection, before configuring it's settings. It will disconnect you.
+    
+    
