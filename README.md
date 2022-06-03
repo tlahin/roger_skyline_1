@@ -110,4 +110,4 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   To begin, we want to make sure our SSH connection to the VM stays open, So by using a command: 
   `sudo ufw allow OpenSSH` or alternatively `sudo ufw allow <portnumber>`.
   
-  
+# DoS protection
