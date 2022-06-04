@@ -121,7 +121,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   Source: https://en-wiki.ikoula.com/en/To_protect_against_the_scan_of_ports_with_portsentry.
   
-  Insalling portsentry: `sudo apt-get install portsentry`.
+  Installing portsentry: `sudo apt-get install portsentry`.
   
   First we head to `/etc/default/portsentry` and set out TCP and UDP modes to advanced:
   
@@ -138,7 +138,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
     BLOCK_UDP="1"
     BLOCK_TCP="1"
  
-  We opt for a blocking of malicious persons through iptables. First we comment our current `KILL_ROUTE` and uncomment
+  We opt for a blocking of malicious persons through iptables. First we comment our current "KILL_ROUTE" and uncomment
   the line compatible with iptables: `KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"`.
   
   You can check that you only have 1 "KILL_ROUTE" active with a command: `cat portsentry.conf | grep KILL_ROUTE | grep -v "#"`.
