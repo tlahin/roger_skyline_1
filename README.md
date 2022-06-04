@@ -144,4 +144,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   You can check that you only have 1 "KILL_ROUTE" active with a command: `cat portsentry.conf | grep KILL_ROUTE | grep -v "#"`.
   
   Once everything is done, restart portsentry: `sudo systemctl restart portsentry`.
+  
+  // HOW TO TEST IT?????
+  
 # Disable unused services
