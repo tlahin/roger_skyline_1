@@ -123,6 +123,14 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   Insalling portsentry: `sudo apt-get install portsentry`.
   
+  First we head to `/etc/default/portsentry` and set out TCP and UDP modes to advanced:
+  
+    `TCP_MODE="atcp"`
+    `UDP_MODE="adcp'`
+  
+  
+  Editing portsentrys configuration: `sudo vim /etc/portsentry/portsentry.conf`.
+  
   
 
 # Disable unused services
