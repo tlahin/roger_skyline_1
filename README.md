@@ -30,7 +30,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
 
 # Configuring static IP and a Netmask in \30
   
-  An amazing guide: https://www.cyberciti.biz/faq/add-configure-set-up-static-ip-address-on-debianlinux/
+  Source: https://www.cyberciti.biz/faq/add-configure-set-up-static-ip-address-on-debianlinux/.
   
   `ip -c link show` will show available ethernet network interfaces. Note down the name of the <network>.
   Look for the address of the network by using command `ip -c addr show <network>`.
@@ -95,7 +95,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
 # Firewall
   
-  Tutorial I found on UFW: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands.
+  Source: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands.
   
   UFW stands for uncomplicated firewall, it's included by default within Ubuntu distributions.
   
