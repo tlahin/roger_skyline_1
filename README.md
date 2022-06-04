@@ -97,7 +97,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   Tutorial I found on UFW: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands.
   
-  UFW stands for uncomplicated firewall, it's included by default within Ubunty distributions.
+  UFW stands for uncomplicated firewall, it's included by default within Ubuntu distributions.
   
   Things to note! 💡
   
