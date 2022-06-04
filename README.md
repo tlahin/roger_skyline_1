@@ -125,8 +125,8 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   First we head to `/etc/default/portsentry` and set out TCP and UDP modes to advanced:
   
-    TCP_MODE="atcp"
-    UDP_MODE="audp"
+    9  TCP_MODE="atcp"
+    10 UDP_MODE="audp"
   
   What advanced mode does is portsentry will monitor for any ports below 1024 (by default),
   You can change the default values in `/etec/portsentry/portsentry.conf` on lines 61 and 62,
