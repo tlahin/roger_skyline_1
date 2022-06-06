@@ -148,3 +148,8 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   // HOW TO TEST IT?????
   
 # Disable unused services
+  
+# Web part
+  
+# SSL sertificate
+  source: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-debian-10
