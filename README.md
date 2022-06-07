@@ -338,3 +338,25 @@ We are going to be installing a Virtual Machine and deploying a simple website.
 
       ...
     </VirtualHost>
+
+  Enabling the Changes in Apache
+  
+  Enable mod_ssl (the Apache SSL module) and mod_headers, which is needed by some of the settings in our SSL snippet:
+  
+  `sudo a2enmod ssl` and `sudo a2enmod headers`.
+  
+  Next, enable your SSL Virtual Host with the a2ensite command:
+  
+  `sudo a2ensite default-ssl`.
+  
+  You will also need to enable your ssl-params.conf file, to read in the values you’ve set:
+  
+  `sudo a2enconf ssl-params`.
+  
+  At this point, the site and the necessary modules are enabled. We should check to make sure that there are no syntax errors in our files. Do this by typing:
+  
+  `sudo apache2ctl configtest`.
+  
+  As long as your output has `Syntax OK` everything is all setup. Now you can restart Apache to implement the changes: `sudo systemctl restart apache2`.
+  
+  
