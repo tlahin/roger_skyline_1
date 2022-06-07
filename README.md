@@ -190,5 +190,16 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
 # Web part
   
+  You were able go with either Nginx or Apache. I chose to go with Apache.
+  
+  Installing Apache: `sudo apt update && sudo apt-get install apache2`.
+  
+  To check status of your webserver: `sudo systemctl status apache2`.
+  
+  Head over `/etc/apache2/ports.conf` and add your VMs IP:
+  
+  ![image](https://user-images.githubusercontent.com/79833061/172383597-76ff3240-12d8-4b8b-aa9e-5ad4aa2f0c14.png)
+
+  
 # SSL sertificate
   source: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-debian-10
