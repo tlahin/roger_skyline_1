@@ -205,10 +205,12 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   installing curl `sudo apt install curl` and trying `curl -k https://localhost`. It should say `Connection refused`.
   
 # SSL sertificate
+  
   source: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-debian-10.
   
   We can create a self-signed key and certificate pair with OpenSSL in a single command:
   `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt`.
+  
   - openssl: This is the basic command line tool for creating and managing OpenSSL certificates, keys, and other files.
   req: This subcommand specifies that we want to use X.509 certificate signing request (CSR) management. The “X.509” is a public key infrastructure standard that SSL and TLS adheres to for its key and certificate management. We want to create a new X.509 cert, so we are using this subcommand.
   - x509: This further modifies the previous subcommand by telling the utility that we want to make a self-signed certificate instead of generating a certificate signing request, as would normally happen.
@@ -218,3 +220,23 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   - keyout: This line tells OpenSSL where to place the generated private key file that we are creating.
   - out: This tells OpenSSL where to place the certificate that we are creating.
 
+  Answer the following question..
+  
+  Create a new snippet in the `/etc/apache2/conf-available directory`. We will name the file `ssl-params.conf` to make its purpose clear:
+  `sudo vim /etc/apache2/conf-available/ssl-params.conf`.
+  
+  Paste this in `ssl-params.conf`:
+    SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
+    SSLProtocol All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
+    SSLHonorCipherOrder On
+    # Disable preloading HSTS for now.  You can use the commented out header line that includes
+    # the "preload" directive if you understand the implications.
+    # Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    Header always set X-Frame-Options DENY
+    Header always set X-Content-Type-Options nosniff
+    # Requires Apache >= 2.4
+    SSLCompression off
+    SSLUseStapling on
+    SSLStaplingCache "shmcb:logs/stapling-cache(150000)"
+    # Requires Apache >= 2.4.11
+    SSLSessionTickets Off
