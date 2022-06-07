@@ -252,3 +252,72 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   Before modifying the file take backup of the original SSL Virtual Host file:
   
   `sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak`.
+  
+  Then we edit our configuration file:
+  
+  `sudo vim /etc/apache2/sites-available/default-ssl.conf`.
+   
+  by default it looks like this:
+  
+    <IfModule mod_ssl.c>
+      <VirtualHost _default_:443>
+      ServerAdmin webmaster@localhost
+
+      DocumentRoot /var/www/html
+
+      ...
+
+      ErrorLog ${APACHE_LOG_DIR}/error.log
+      CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+      ...
+
+      SSLEngine on
+
+      ...
+
+      SSLCertificateFile	/etc/ssl/certs/ssl-cert-snakeoil.pem
+      SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+      ...
+
+      <FilesMatch "\.(cgi|shtml|phtml|php)$">
+          SSLOptions +StdEnvVars
+      </FilesMatch>
+      <Directory /usr/lib/cgi-bin>
+          SSLOptions +StdEnvVars
+      </Directory>
+
+      ...
+
+    </VirtualHost>
+  </IfModule>
+  
+  Change settings accordingly: 
+  
+    <IfModule mod_ssl.c>
+      <VirtualHost _default_:443>
+        ServerAdmin tlahin@student.hive.fi
+        ServerName 10.13.254.36
+
+        DocumentRoot /var/www/html
+
+        ...
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        ...
+
+        SSLEngine on
+
+        ...
+
+        SSLCertificateFile	/etc/ssl/certs/apache-selfsigned.crt
+        SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+
+        ...
+
+
+      </VirtualHost>
+    </IfModule>
