@@ -113,7 +113,9 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
 # DoS protection
   
-  source: https://www.garron.me/en/go2linux/fail2ban-protect-web-server-http-dos-attack.html.
+  sources: 
+  https://pipo.blog/articles/20210915-fail2ban-apache-dos and 
+  https://www.garron.me/en/go2linux/fail2ban-protect-web-server-http-dos-attack.html.
  
   Installing fail2ban: `sudo apt-get install fail2ban`.
   
