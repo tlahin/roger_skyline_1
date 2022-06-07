@@ -247,7 +247,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
     # Requires Apache >= 2.4.11
     SSLSessionTickets Off
 
-  Modifying the Default Apache SSL Virtual Host File
+  **Modifying the Default Apache SSL Virtual Host File**
 
   Before modifying the file take backup of the original SSL Virtual Host file:
   
@@ -322,7 +322,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
       </VirtualHost>
     </IfModule>
   
-    Modifying the HTTP Host File to Redirect to HTTPS
+    **Modifying the HTTP Host File to Redirect to HTTPS**
   
   `sudo vim /etc/apache2/sites-available/000-default.conf`.
   
@@ -339,7 +339,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
       ...
     </VirtualHost>
 
-  Enabling the Changes in Apache
+  **Enabling the Changes in Apache**
   
   Enable mod_ssl (the Apache SSL module) and mod_headers, which is needed by some of the settings in our SSL snippet:
   
@@ -359,4 +359,21 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   As long as your output has `Syntax OK` everything is all setup. Now you can restart Apache to implement the changes: `sudo systemctl restart apache2`.
   
+  **Testing Encryption**
   
+  Open your web browser and type https:// followed by your server’s domain name or IP into the address bar:
+  
+  ![image](https://user-images.githubusercontent.com/79833061/172443709-3a12ac8d-4dd6-41af-8c58-8b2f003e86c1.png)
+
+  Because the certificate you created isn’t signed by one of your browser’s trusted certificate authorities, you will likely see a scary looking warning.
+  
+  This is expected and normal. We are only interested in the encryption aspect of our certificate, not the third party validation of our host’s authenticity. Click ADVANCED and then the link provided to proceed to your host anyways.
+  
+  You should be taken to your site. If you look in the browser address bar, you will see a lock with an “x” over it or another similar “not secure” notice. In this case, this just means that the certificate cannot be validated. It is still encrypting your connection.
+  
+  ![image](https://user-images.githubusercontent.com/79833061/172444304-da238214-2398-4bd4-9334-d9818787ea99.png)
+
+  
+  If you configured Apache to redirect HTTP to HTTPS, you can also check whether the redirect functions correctly: `http://server_domain_or_IP`.
+  
+  Now you have configured your Apache server to use strong encryption for client connections. This will allow you to serve requests securely and will prevent outside parties from reading your traffic
