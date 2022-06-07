@@ -79,18 +79,23 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   Editing `/etc/ssh/sshd_config` to:
   
   Disabling direct root access.
+  
     `34 PermitRootLogin no`.
   
   Public Key Authentication.
+  
     `39 PubkeyAuthentication yes`.
   
   Location of valid keys.
+  
     `42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2`.
   
   Instead of using password to login to the system we want to use our public key, so we disable password authentication.
+  
     `58 PasswordAuthentication no`.
   
-  No empty passwords
+  No empty passwords.
+  
     `59 PermitEmptyPasswords no`.
   
 # Firewall
@@ -241,3 +246,9 @@ We are going to be installing a Virtual Machine and deploying a simple website.
     SSLStaplingCache "shmcb:logs/stapling-cache(150000)"
     # Requires Apache >= 2.4.11
     SSLSessionTickets Off
+
+  Modifying the Default Apache SSL Virtual Host File
+
+  Before modifying the file take backup of the original SSL Virtual Host file:
+  
+  `sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak`.
