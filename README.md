@@ -147,6 +147,15 @@ We are going to be installing a Virtual Machine and deploying a simple website.
     bantime = 900
     action = iptables[name=HTTP, port=http, protocol=tcp]
   
+  after saving the configuration we need to make a filter for it:
+  `sudo vim /etc/fail2ban/filter.d/https-get-dos.conf`.
+  
+    [Definition]
+    failregex = ^<HOST> -.*(GET|POST).*
+    ignoreregex =
+  
+  Save and restart fail2ban: `sudo systemctl restart fail2ban`.
+  
 # Portscan protection
   
   Source: https://en-wiki.ikoula.com/en/To_protect_against_the_scan_of_ports_with_portsentry.
