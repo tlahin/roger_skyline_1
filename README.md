@@ -112,10 +112,38 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   `sudo ufw allow proto tcp from any to any port 80,443`, port 80 being HTTP and 443 being HTTPS.
   
 # DoS protection
+  
+  source: https://www.garron.me/en/go2linux/fail2ban-protect-web-server-http-dos-attack.html.
  
   Installing fail2ban: `sudo apt-get install fail2ban`.
   
   Making a configuration file: `sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`.
+  
+  Then we need to edit `/etc/fail2ban/jail.local` and add few things:
+  
+    [sshd]
+
+    # To use more aggressive sshd modes set filter parameter "mode" in jail.local:
+    # normal (default), ddos, extra or aggressive (combines all).
+    # See "tests/files/logs/sshd" or "filter.d/sshd.conf" for usage example and details.
+    mode   = normal
+    enabled = true
+    port    = 9212
+    logpath = %(sshd_log)s
+    backend = %(sshd_backend)s
+    maxretry = 3
+    bantime = 900
+
+    # DoS protection
+    [http-get-dos]
+    enabled = true
+    port = http,https
+    filter = http-get-dos
+    logpath = /var/log/apache2/access.log
+    maxretry = retry
+    findtime = 300
+    bantime = 900
+    action = iptables[name=HTTP, port=http, protocol=tcp]
   
 # Portscan protection
   
