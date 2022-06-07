@@ -108,8 +108,9 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   To begin, we want to make sure our SSH connection to the VM stays open by allowing the connection to the port: 
   `sudo ufw allow <portnumber>/tcp`.
   
-  For later purposes we want to enable other connections aswell such as HTTP and HTTPS:
-  `sudo ufw allow proto tcp from any to any port 80,443`, port 80 being HTTP and 443 being HTTPS.
+  We want to enable other connections aswell such as HTTP and HTTPS:
+  `sudo ufw allow 80/tcp`, port 80 being HTTP.
+  `sudo ufw allow 443`, 443 being HTTPS.
   
 # DoS protection
   
