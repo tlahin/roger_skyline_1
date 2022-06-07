@@ -180,7 +180,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   We opt for a blocking of malicious persons through iptables. First we comment our current "KILL_ROUTE" and uncomment
   the line compatible with iptables: `KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"`.
   
-  You can check that you only have 1 "KILL_ROUTE" active with a command: `cat portsentry.conf | grep KILL_ROUTE | grep -v "#"`.
+  You can check that you only have 1 "KILL_ROUTE" active with a command: `cat /etc/portsentry/portsentry.conf | grep KILL_ROUTE | grep -v "#"`.
   
   Once everything is done, restart portsentry: `sudo systemctl restart portsentry`.
   
