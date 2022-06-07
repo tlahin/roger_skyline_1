@@ -200,6 +200,8 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   ![image](https://user-images.githubusercontent.com/79833061/172383597-76ff3240-12d8-4b8b-aa9e-5ad4aa2f0c14.png)
 
+  This configuration will prevent VM from listening to https://localhost and will work only using https://10.13.254.32. You can confirm this by
+  installing curl `sudo apt install curl` and trying `curl -k https://localhost`. It should say `Connection refused`.
   
 # SSL sertificate
   source: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-debian-10
