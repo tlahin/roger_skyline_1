@@ -226,6 +226,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   `sudo vim /etc/apache2/conf-available/ssl-params.conf`.
   
   Paste this in `ssl-params.conf`:
+  
     SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
     SSLProtocol All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
     SSLHonorCipherOrder On
