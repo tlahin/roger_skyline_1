@@ -322,7 +322,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
       </VirtualHost>
     </IfModule>
   
-  Modifying the HTTP Host File to Redirect to HTTPS
+    Modifying the HTTP Host File to Redirect to HTTPS
   
   `sudo vim /etc/apache2/sites-available/000-default.conf`.
   
@@ -338,5 +338,3 @@ We are going to be installing a Virtual Machine and deploying a simple website.
 
       ...
     </VirtualHost>
-
-    # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
