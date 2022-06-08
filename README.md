@@ -1,9 +1,7 @@
 # Roger_skyline_1
 
 
-This subject aims to initiate you to the basics of system and network administration.
-
-We are going to be installing a Virtual Machine and deploying a simple website.
+This subject aims to initiate you to the basics of system and network administration, so we are going to be installing a Virtual Machine and deploying a simple website.
 
 # Installing Virtual Machine
   
