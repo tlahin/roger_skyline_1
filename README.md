@@ -215,8 +215,22 @@ This subject aims to initiate you to the basics of system and network administra
   To check status of your webserver: `sudo systemctl status apache2`.
   
   Head over `/etc/apache2/ports.conf` and add your VMs IP:
-  
-  ![image](https://user-images.githubusercontent.com/79833061/172383597-76ff3240-12d8-4b8b-aa9e-5ad4aa2f0c14.png)
+
+    # If you just change the port or add more ports here, you will likely also
+    # have to change the VirtualHost statement in
+    # /etc/apache2/sites-enabled/000-default.conf
+
+    Listen 10.13.254.36:80
+
+    <IfModule ssl_module>
+      Listen 10.13.254.36:443
+    </IfModule>
+
+    <IfModule mod_gnutls.c>
+      Listen 10.13.254.36:443
+    </IfModule>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 
   This configuration will prevent VM from listening to https://localhost and will work only using https://10.13.254.32. You can confirm this by
   installing curl `sudo apt install curl` and trying `curl -k https://localhost`. It should say `Connection refused`.
