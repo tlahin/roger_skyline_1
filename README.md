@@ -306,6 +306,15 @@ This subject aims to initiate you to the basics of system and network administra
     
   You can open your mailbox with a command: `mutt`.
 
+
+  To make our script run itself every day at 00:00, we make a new crontab task with a command: `sudo crontab -e`.
+
+    # run monitor_crontab.sh everyday at 00:00
+    0 0 * * * sh /usr/scripts/monitor_crontab.sh
+  
+  You now have a working script auto executed by crontab.
+  
+  
 # Web part
   
   You were able go with either Nginx or Apache. I chose to go with Apache.
