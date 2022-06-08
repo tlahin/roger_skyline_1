@@ -217,6 +217,20 @@ This subject aims to initiate you to the basics of system and network administra
   Disable every service not used in the project with:
   
     sudo systemctl disable <service>
+    
+# Script to update all the packages
+
+  I created a folder to hold my scripts in `/usr/scripts/`.
+  
+  The script will be writing information to a log file located in `/var/log/auto_update.log` and will also update all packages on the machine.
+
+    #!/bin/bash
+
+    echo UPDATING PACKAGES >> /var/log/auto_update.log
+    echo $(date) >> /var/log/auto_update.log
+    echo `sudo apt-get update --yes` >> /var/log/auto_update.log
+    echo `sudo apt-get upgrade --yes` >> /var/log/auto_update.log
+    echo '' >> /var/log/auto_update.log
   
 # Web part
   
