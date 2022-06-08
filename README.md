@@ -232,6 +232,16 @@ This subject aims to initiate you to the basics of system and network administra
     echo `sudo apt-get upgrade --yes` >> /var/log/auto_update.log
     echo '' >> /var/log/auto_update.log
   
+  To make this script run everytime we boot the machine and once a week at 4AM we need to use crontab.
+  
+  Run `sudo crontab -e` to edit our crontab file. In the file we need to add 2 things:
+  
+    # run auto_update.sh when reboting
+    @reboot sh /usr/scripts/auto_update.sh
+
+    # run auto_update.sh once a week at 4AM (Tuesday)
+    0 4 * * 2 sh /usr/scripts/auto_update.sh
+
 # Web part
   
   You were able go with either Nginx or Apache. I chose to go with Apache.
