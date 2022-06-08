@@ -32,7 +32,7 @@ We are going to be installing a Virtual Machine and deploying a simple website.
   
   Source: https://www.cyberciti.biz/faq/add-configure-set-up-static-ip-address-on-debianlinux/.
   
-  `ip -c link show` will show available ethernet network interfaces. Note down the name of the <network>.
+  `ip -c link show` will show available ethernet network interfaces. Note down the name of the network.
   Look for the address of the network by using command `ip -c addr show <network>`.
   
   subnet calculator I used: https://www.calculator.net/ip-subnet-calculator.html
