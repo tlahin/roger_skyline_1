@@ -385,7 +385,7 @@ This subject aims to initiate you to the basics of system and network administra
   
   **Testing Encryption**
   
-  Open your web browser and type https:// followed by your server’s domain name or IP into the address bar:
+  Open your web browser and type `http://server_domain_or_IP`.
   
   ![image](https://user-images.githubusercontent.com/79833061/172443709-3a12ac8d-4dd6-41af-8c58-8b2f003e86c1.png)
 
