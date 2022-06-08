@@ -40,17 +40,31 @@ This subject aims to initiate you to the basics of system and network administra
   
   Since we want our CIDR to be /30 our subnet mask has to be 255.255.255.252
   
-  For my IP I choce 10.13.254.32 from the 64 different network addresses available.
+  For my IP I choce 10.13.254.36 from the 64 different network addresses available.
   
   Now we have all the values we need.
   We change our chocen networks settings in `/etc/network/interface`, in my case `enp0s3` to `auto`:
   
-  ![image](https://user-images.githubusercontent.com/79833061/171835158-2ae72f6a-ec43-4fe8-8da1-43a678fcea91.png).
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+
+    source /etc/network/interfaces.d/*
+
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+
+    # The primary network interface
+    auto enp0s3
+    
   
   Then we want to create a configuration file for it: `sudo vim /etc/network/interface.d/<network>`.
   In the file we want to write the values we just gathered:
   
-  ![image](https://user-images.githubusercontent.com/79833061/171835962-865c86f7-58ef-42fd-b22b-4598bff73960.png).
+    iface enp0s3 inet static
+    address 10.13.254.36
+    netmask 255.255.255.252
+    gateway 10.13.254.254
 
   After saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
   
