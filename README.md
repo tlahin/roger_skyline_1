@@ -242,6 +242,8 @@ This subject aims to initiate you to the basics of system and network administra
     # run auto_update.sh once a week at 4AM (Tuesday)
     0 4 * * 2 sh /usr/scripts/auto_update.sh
 
+ Save and close the file, you can use `sudo crontab -l` to view your current crontab.
+ 
 # Web part
   
   You were able go with either Nginx or Apache. I chose to go with Apache.
