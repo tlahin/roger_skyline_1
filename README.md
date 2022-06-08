@@ -182,7 +182,7 @@ This subject aims to initiate you to the basics of system and network administra
   
   Installing portsentry: `sudo apt-get install portsentry`.
   
-  First we head to `/etc/default/portsentry` and set out TCP and UDP modes to advanced:
+  First we head to `/etc/default/portsentry` and set TCP and UDP modes to advanced:
   
     TCP_MODE="atcp"
     UDP_MODE="audp"
