@@ -234,6 +234,8 @@ This subject aims to initiate you to the basics of system and network administra
   
   To make this script run everytime we boot the machine and once a week at 4AM we need to use crontab.
   
+  Source: https://crontab-generator.org/.
+  
   Run `sudo crontab -e` to edit our crontab file. In the file we need to add 2 things:
   
     # run auto_update.sh when reboting
