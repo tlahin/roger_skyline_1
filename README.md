@@ -205,6 +205,18 @@ This subject aims to initiate you to the basics of system and network administra
   Once everything is done, restart portsentry: `sudo systemctl restart portsentry`.
   
 # Disable unused services
+
+  To check all processes: 
+  
+    sudo systemctl list-units --type service --all
+    
+  To list enabled services: 
+
+    sudo systemctl list-unit-files --state=enabled --type=service
+    
+  Disable every service not used in the project with:
+  
+    sudo systemctl disable <service>`
   
 # Web part
   
