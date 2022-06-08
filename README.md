@@ -339,7 +339,7 @@ This subject aims to initiate you to the basics of system and network administra
       Listen 10.13.254.36:443
     </IfModule>
 
-  This configuration will prevent VM from listening to https://localhost and will work only using https://10.13.254.32. You can confirm this by
+  This configuration will prevent VM from listening to https://localhost and will work only using https://10.13.254.36. You can confirm this by
   installing curl `sudo apt install curl` and trying `curl -k https://localhost`. It should say `Connection refused`.
   
 # SSL sertificate
