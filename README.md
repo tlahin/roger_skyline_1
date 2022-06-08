@@ -280,7 +280,7 @@ This subject aims to initiate you to the basics of system and network administra
   
   The configuration of postfix is located in `/etc/postfix/main.cf`, but you can also use postfixes own command `postconf` to query or configure settings directly.
   
-  We want to edit our mailboxes location with a command `sudo postconf -e "home_mailbox = mail/".
+  We want to edit our mailboxes location with a command `sudo postconf -e "home_mailbox = mail/"`.
   
   Restart postfix service with a command: `sudo service postfix restart`.
   
