@@ -184,8 +184,8 @@ This subject aims to initiate you to the basics of system and network administra
   
   First we head to `/etc/default/portsentry` and set out TCP and UDP modes to advanced:
   
-    9  TCP_MODE="atcp"
-    10 UDP_MODE="audp"
+    TCP_MODE="atcp"
+    UDP_MODE="audp"
   
   What advanced mode does is portsentry will monitor for any ports below 1024 (by default),
   You can change the default values in `/etec/portsentry/portsentry.conf` on lines 61 and 62,
@@ -270,11 +270,11 @@ This subject aims to initiate you to the basics of system and network administra
   
   To get started we need to install couple of packages:
   
-  **mailutils**
+  **Mailutils**
   
   `sudo apt-get install mailutils`.
   
-  **postfix**
+  **Postfix**
   
   `sudo apt-get install postfix`.
   
