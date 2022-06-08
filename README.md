@@ -231,6 +231,8 @@ This subject aims to initiate you to the basics of system and network administra
     echo `sudo apt-get update --yes` >> /var/log/auto_update.log
     echo `sudo apt-get upgrade --yes` >> /var/log/auto_update.log
     echo '' >> /var/log/auto_update.log
+    
+  Remember to add executable rights to the script.
   
   To make this script run everytime we boot the machine and once a week at 4AM we need to use crontab.
   
@@ -246,10 +248,64 @@ This subject aims to initiate you to the basics of system and network administra
 
  Save and close the file, you can use `sudo crontab -l` to view your current crontab.
  
-# Script to monitor crontab
+# Script to monitor crontab changes
 
+  I created another script in `/usr/scripts/` called `monitor_crontab.sh`.
 
- 
+    #!/bin/sh
+
+    CRONTAB='/var/spool/cron/crontabs/root'
+    BACKUP='/var/spool/cron/crontabs/root.backup'
+
+    DIFF=`diff $CRONTAB $BACKUP`
+    if [ ! -z "$DIFF" ]; then
+      echo "Changes in CRONTAB file." | mail -s "Crontab modifed" root
+    fi
+
+    cp $CRONTAB $BACKUP
+    
+  Remember to add executable rights to the script.
+    
+  It will send a notification to root if machines crontab file has been edited.
+  
+  To get started we need to install couple of packages:
+  
+  **mailutils**
+  
+  `sudo apt-get install mailutils`.
+  
+  **postfix**
+  
+  `sudo apt-get install postfix`.
+  
+  The configuration of postfix is located in `/etc/postfix/main.cf`, but you can also use postfixes own command `postconf` to query or configure settings directly.
+  
+  We want to edit our mailboxes location with a command `sudo postconf -e "home_mailbox = mail/".
+  
+  Restart postfix service with a command: `sudo service postfix restart`.
+  
+  **mutt**
+  
+  `sudo apt-get install mutt`.
+  
+  Create a configuration file in `/root/.muttrc` and add the following to it:
+  
+    set mbox_type=Maildir
+    set folder="/root/mail"
+    set mask="!^\\.[^.]"
+    set mbox="/root/mail"
+    set record="+.Sent"
+    set postponed="+.Drafts"
+    set spoolfile="/root/mail"
+    
+  Now you should be able to recive and send mail.
+  
+  Example: 
+  
+    echo "text' | sudo mail -s "subject" <reciver>
+    
+  You can open your mailbox with a command: `mutt`.
+
 # Web part
   
   You were able go with either Nginx or Apache. I chose to go with Apache.
