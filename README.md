@@ -141,7 +141,7 @@ This subject aims to initiate you to the basics of system and network administra
   
   Making a configuration file: `sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`.
   
-  Then we need to edit `/etc/fail2ban/jail.local` to change few settings for '[sshd]' and also to create a completely new jail '[http-get-dos]'.
+  Then we need to edit `/etc/fail2ban/jail.local` to change few settings for `[sshd]` and also to create a completely new jail `[http-get-dos]`.
   
     [sshd]
 
