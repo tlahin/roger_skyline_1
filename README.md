@@ -216,7 +216,7 @@ This subject aims to initiate you to the basics of system and network administra
     
   Disable every service not used in the project with:
   
-    sudo systemctl disable <service>`
+    sudo systemctl disable <service>
   
 # Web part
   
