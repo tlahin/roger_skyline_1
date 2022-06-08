@@ -230,8 +230,6 @@ This subject aims to initiate you to the basics of system and network administra
       Listen 10.13.254.36:443
     </IfModule>
 
-# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
-
   This configuration will prevent VM from listening to https://localhost and will work only using https://10.13.254.32. You can confirm this by
   installing curl `sudo apt install curl` and trying `curl -k https://localhost`. It should say `Connection refused`.
   
