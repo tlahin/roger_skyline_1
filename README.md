@@ -167,7 +167,7 @@ This subject aims to initiate you to the basics of system and network administra
     bantime = 900
     action = iptables[name=HTTP, port=http, protocol=tcp]
   
-  after saving the configuration we need to make a filter for it:
+  after saving the configuration we need to make a filter for our new jail:
   `sudo vim /etc/fail2ban/filter.d/https-get-dos.conf`.
   
     [Definition]
