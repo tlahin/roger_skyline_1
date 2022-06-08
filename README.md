@@ -129,7 +129,7 @@ This subject aims to initiate you to the basics of system and network administra
   `sudo ufw allow 80/tcp`, port 80 being HTTP.
   `sudo ufw allow 443`, 443 being HTTPS.
   
-  and to enable firewall and changes we made to it: `sudo ufw enable`.
+  Finally to enable firewall and changes we made to it: `sudo ufw enable`.
   
 # DoS protection
   
