@@ -176,6 +176,10 @@ This subject aims to initiate you to the basics of system and network administra
   
   Save and restart fail2ban: `sudo systemctl restart fail2ban`.
   
+  What I used to test my fail2ban: `https://github.com/gkbrk/slowloris`.
+  
+  `python3 slowloris.py 10.13.254.36 --sleeptime 1 -s 500`.
+  
 # Portscan protection
   
   Source: https://en-wiki.ikoula.com/en/To_protect_against_the_scan_of_ports_with_portsentry.
