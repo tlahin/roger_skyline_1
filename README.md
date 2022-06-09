@@ -162,17 +162,20 @@ This subject aims to initiate you to the basics of system and network administra
     port = http,https
     filter = http-get-dos
     logpath = /var/log/apache2/access.log
-    maxretry = retry
+    maxretry = 150
     findtime = 300
     bantime = 900
     action = iptables[name=HTTP, port=http, protocol=tcp]
   
   after saving the configuration we need to make a filter for our new jail:
-  `sudo vim /etc/fail2ban/filter.d/https-get-dos.conf`.
+  `sudo vim /etc/fail2ban/filter.d/http-get-dos.conf`.
+  
+  Useful tool to figure out a regex configuration: `https://www.regextester.com/`.
   
     [Definition]
     failregex = ^<HOST> -.*(GET|POST).*
     ignoreregex =
+  
   
   Save and restart fail2ban: `sudo systemctl restart fail2ban`.
   
