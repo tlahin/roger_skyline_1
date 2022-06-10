@@ -2,8 +2,19 @@
 
   This project let's you discover the basics about system and network administration as well as a lots of services used on a server machine.
   
-  - # Installing Virtual Machine
-
+  - [# Installing Virtual Machine](https://github.com/tlahin/roger_skyline_1/blob/main/README.md#installing-virtual-machine-1)
+  - [# Adding rights to sudo](https://github.com/tlahin/roger_skyline_1#adding-rights-to-sudo)
+  - [# Configuring static IP and a Netmask in \30](https://github.com/tlahin/roger_skyline_1#configuring-static-ip-and-a-netmask-in-30)
+  - [# Changing ssh port](https://github.com/tlahin/roger_skyline_1#changing-ssh-ports)
+  - [#SSH access with public keys and root access](https://github.com/tlahin/roger_skyline_1#ssh-access-with-public-keys-and-root-access)
+  - [#Firewall](https://github.com/tlahin/roger_skyline_1#firewall)
+  - [#DoS protection](https://github.com/tlahin/roger_skyline_1#dos-protection)
+  - [#Portscan protection](https://github.com/tlahin/roger_skyline_1#portscan-protection)
+  - [#Disable unused services](https://github.com/tlahin/roger_skyline_1#disable-unused-services)
+  - [#Script to update all the packages](https://github.com/tlahin/roger_skyline_1#script-to-update-all-the-packages)
+  - [#Script to monitor crontab changes](https://github.com/tlahin/roger_skyline_1#script-to-monitor-crontab-changes)
+  - [#Web part](https://github.com/tlahin/roger_skyline_1#web-part)
+  - [#SSL-sertificate](https://github.com/tlahin/roger_skyline_1#ssl-sertificate)
 
 # Installing Virtual Machine
   
@@ -70,7 +81,7 @@
 
   After saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
   
-# Changing SSH ports
+# Changing SSH port
 
   To edit the SSH settings we use command: `sudo vim /etc/ssh/sshd_config`
 
