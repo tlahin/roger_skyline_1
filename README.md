@@ -15,7 +15,7 @@
   - [Script to monitor crontab changes](https://github.com/tlahin/roger_skyline_1#script-to-monitor-crontab-changes)
   - [Web part](https://github.com/tlahin/roger_skyline_1#web-part)
   - [SSL-sertificate](https://github.com/tlahin/roger_skyline_1#ssl-sertificate)
-  - [Deployment automatization](https://github.com/tlahin/roger_skyline_1/blob/main/README.md#deployment-automatization)
+  - [Deployment automatization script](https://github.com/tlahin/roger_skyline_1/blob/main/README.md#deployment-automatization)
 
    Subject: [roger-skyline-1.5.en.pdf](https://github.com/tlahin/roger_skyline_1/files/8878592/roger-skyline-1.5.en.pdf)
 
@@ -536,7 +536,7 @@
   
   Now you have configured your Apache server to use strong encryption for client connections. This will allow you to serve requests securely and will prevent outside parties from reading your traffic
 
-# Deployment automatization
+# Deployment automatization script
 
   Created yet another script in `/usr/scripts/`. This script will check if theres new changes in `/usr/scripts/deployment/`, if so it will deploy the changes to `/var/www/html/` and log the action in `/var/log/auto_deployment.log`.
 
