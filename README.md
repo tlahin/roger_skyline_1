@@ -186,7 +186,7 @@
   after saving the configuration we need to make a filter for our new jail:
   `sudo vim /etc/fail2ban/filter.d/http-get-dos.conf`.
   
-  Useful tool to figure out a regex configuration: `https://www.regextester.com/`.
+  Useful tool to figure out a regex configuration: https://www.regextester.com.
   
     [Definition]
     failregex = ^<HOST> -.*(GET|POST).*
