@@ -537,3 +537,24 @@
   Now you have configured your Apache server to use strong encryption for client connections. This will allow you to serve requests securely and will prevent outside parties from reading your traffic
 
 # Deployment automatization
+
+  Created yet another script in `/usr/scripts/`. This script will check if theres new changes in `/usr/scripts/deployment/`, if so it will deploy the changes to `/var/www/html/` and log the action in `/var/log/auto_deployment.log`.
+
+    #!/bin/sh
+
+    DEPLOYMENT_DIR='/usr/scripts/deployment'
+    WEB_DIR='/var/www/html'
+    LOG='/var/log/auto_deployment.log'
+
+    DIFF=`diff -q $DEPLOYMENT_DIR $WEB_DIR`
+
+    if [ ! -z "$DIFF" ]; then
+            sudo cp -v $DEPLOYMENT_DIR/* $WEB_DIR
+            echo "New version deployed." >> $LOG
+            echo $(date) >> $LOG
+            echo '' >> $LOG
+    else
+            echo "No new changes. Newest version already deployed." >> $LOG
+            echo $(date) >> $LOG
+            echo '' >> $LOG
+    fi
