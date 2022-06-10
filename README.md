@@ -16,6 +16,8 @@
   - [Web part](https://github.com/tlahin/roger_skyline_1#web-part)
   - [SSL-sertificate](https://github.com/tlahin/roger_skyline_1#ssl-sertificate)
 
+   Subject: [roger-skyline-1.5.en.pdf](https://github.com/tlahin/roger_skyline_1/files/8878592/roger-skyline-1.5.en.pdf)
+
 # Installing Virtual Machine
   
   I chose to install Debian since I used it in INIT aswell.
