@@ -21,7 +21,7 @@
 
 # Installing Virtual Machine
   
-  I chose to install Debian since I used it in INIT aswell.
+  I chose to install Debian since I used it in INIT previously.
   
   First task was to set 8 GB of disk size to the VM and atleast one partition to be 4.2 GB
   
