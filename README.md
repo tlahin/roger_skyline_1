@@ -15,6 +15,7 @@
   - [Script to monitor crontab changes](https://github.com/tlahin/roger_skyline_1#script-to-monitor-crontab-changes)
   - [Web part](https://github.com/tlahin/roger_skyline_1#web-part)
   - [SSL-sertificate](https://github.com/tlahin/roger_skyline_1#ssl-sertificate)
+  - [Deployment automatization]()
 
    Subject: [roger-skyline-1.5.en.pdf](https://github.com/tlahin/roger_skyline_1/files/8878592/roger-skyline-1.5.en.pdf)
 
