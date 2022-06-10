@@ -108,23 +108,23 @@
   
   Disabling direct root access.
   
-    `34 PermitRootLogin no`
+    34 PermitRootLogin no
   
   Public Key Authentication.
   
-    `39 PubkeyAuthentication yes`
+    39 PubkeyAuthentication yes
   
   Location of valid keys.
   
-    `42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2`
+    42 AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2
   
   Instead of using password to login to the system we want to use our public key, so we disable password authentication.
   
-    `58 PasswordAuthentication no`
+    58 PasswordAuthentication no
   
   No empty passwords.
   
-    `59 PermitEmptyPasswords no`
+    59 PermitEmptyPasswords no
   
 # Firewall
   
