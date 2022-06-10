@@ -561,4 +561,7 @@
     
   Remember to add executable rights to the script.
   
+  Add a new crontab job to run the script every day at 4AM: `sudo crontab -e`
   
+    # run auto_deployment.sh everyday at 4AM
+    0 4 * * * sh /usr/scripts/auto_deployment.sh
