@@ -558,3 +558,7 @@
             echo $(date) >> $LOG
             echo '' >> $LOG
     fi
+    
+  Remember to add executable rights to the script.
+  
+  
