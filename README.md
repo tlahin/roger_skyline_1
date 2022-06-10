@@ -1,7 +1,9 @@
 # Roger_skyline_1
 
+  This project let's you discover the basics about system and network administration as well as a lots of services used on a server machine.
+  
+  - # Installing Virtual Machine
 
-This subject aims to initiate you to the basics of system and network administration, so we are going to be installing a Virtual Machine and deploying a simple website.
 
 # Installing Virtual Machine
   
