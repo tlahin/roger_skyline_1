@@ -293,6 +293,11 @@
     
   It will send a notification to root if machines crontab file has been edited.
   
+  Then we make crontab run the script everyday at 00:00: `sudo crontab -e`
+  
+    # run monitor_crontab.sh everyday at 00:00
+    0 0 * * * sh /usr/scripts/monitor_crontab.sh
+  
   To get started we need to install couple of packages:
   
   **Mailutils**
