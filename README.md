@@ -28,19 +28,25 @@
   Easily configured during the graphical installation of Debian.
   You're able to check the size of the partitions with a command: `sudo fdisk -l`.
  
-# Adding rights to sudo
+# New user and adding sudo rights
 
-   `usermod -aG sudo username`.
+  To create and new user use command:
+
+  `adduser username`.
   
-   - usermod is the tool that modifies a user account.
+  then add sudo rights with a following command:
   
-   - -aG is the option that tells the command to add the user to a specific group. 
+  `usermod -aG sudo username`.
+  
+  - usermod is the tool that modifies a user account.
+  
+  - -aG is the option that tells the command to add the user to a specific group. 
    The -a option adds a user to the group without removing it from current groups. 
    The -G option states the group where to add the user.
   
-   - sudo is the group we append to the above options. In this case, it is sudo, but it can be any other group.
+  - sudo is the group we append to the above options. In this case, it is sudo, but it can be any other group.
   
-   - username is the name of the user account you want to add to the sudo group.
+  - username is the name of the user account you want to add to the sudo group.
 
 # Configuring static IP and a Netmask in \30
   
