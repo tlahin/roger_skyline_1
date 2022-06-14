@@ -59,7 +59,7 @@
   
   ❗ subnet calculator I used: https://www.calculator.net/ip-subnet-calculator.html
   
-  Gateway value is found with `ipconfig getoption en0 router` on your MAC.
+  Gateway value is found with `ipconfig getoption en0 router` on your MAC. 
   ❗ In my case it is 10.13.254.254.
   
   Task is to set VMs CIDR to be /30 so subnet mask has to be 255.255.255.252
