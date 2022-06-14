@@ -21,20 +21,22 @@
 
 # Installing Virtual Machine
   
-  I chose to install Debian since I used it in INIT previously.
+  You have the freedom to install any linux OS you want!
   
-  First task was to set 8 GB of disk size to the VM and atleast one partition to be 4.2 GB
+  ❗ I chose to install Debian since I used it in INIT previously.
+  
+  First task is to set 8 GB of disk size to the VM and atleast one partition to be 4.2 GB
   
   Easily configured during the graphical installation of Debian.
-  You're able to check the size of the partitions with a command: `sudo fdisk -l`.
+  It's possible to check the size of the partitions with a command: `sudo fdisk -l`.
  
 # New user and adding sudo rights
 
-  To create and new user use command:
+  To create a new user use command:
 
   `adduser username`.
   
-  then add sudo rights with a following command:
+  Add sudo rights with a following command:
   
   `usermod -aG sudo username`.
   
@@ -55,17 +57,18 @@
   `ip -c link show` will show available ethernet network interfaces. Note down the name of the network.
   Look for the address of the network by using command `ip -c addr show <network>`.
   
-  subnet calculator I used: https://www.calculator.net/ip-subnet-calculator.html
+  ❗ subnet calculator I used: https://www.calculator.net/ip-subnet-calculator.html
   
   Gateway value is found with `ipconfig getoption en0 router` on your MAC.
-  In my case it is 10.13.254.254.
+  ❗ In my case it is 10.13.254.254.
   
-  Since we want our CIDR to be /30 our subnet mask has to be 255.255.255.252
+  Task is to set VMs CIDR to be /30 so subnet mask has to be 255.255.255.252
   
-  For my IP I choce 10.13.254.36 from the 64 different network addresses available.
+  ❗ For my IP I choce 10.13.254.36 from the 64 different network addresses available.
   
-  Now we have all the values we need.
-  We change our chocen networks settings in `/etc/network/interface`, in my case `enp0s3` to `auto`:
+  Now you have gathered all the values needed for the next step.
+  You can change your chocen networks settings in `/etc/network/interface`. 
+  ❗ In my case `enp0s3` to `auto`:
   
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
@@ -80,8 +83,8 @@
     auto enp0s3
     
   
-  Then we want to create a configuration file for it: `sudo vim /etc/network/interface.d/<network>`.
-  In the file we want to write the values we just gathered:
+  You need to create a configuration file for it: `sudo vim /etc/network/interface.d/<network>`.
+  In the file you want to write the values you previously got:
   
     iface enp0s3 inet static
     address 10.13.254.36
@@ -92,12 +95,12 @@
   
 # Changing SSH port
 
-  To edit the SSH settings we use command: `sudo vim /etc/ssh/sshd_config`
+  To edit the SSH settings you can use command: `sudo vim /etc/ssh/sshd_config`
 
   On row number 15 there is `#Port 22` as a default.
   Uncomment it and change the port number according to your liking.
   
-  I set my port to `9212`.
+  ❗ I set my port to `9212`.
 
   Restart ssh service: `sudo service ssh restart`.
 
@@ -144,14 +147,14 @@
 
    - Do not enable ufw, if you're using an SSH connection, before configuring it's settings. It might cause some trouble. :)
     
-  To begin, we want to make sure our SSH connection to the VM stays open by allowing the connection to the port: 
+  To begin, you want to make sure our SSH connection to the VM stays open by allowing the connection to the port: 
   `sudo ufw allow <portnumber>/tcp`.
   
-  We want to enable other connections aswell such as HTTP and HTTPS:
+  You want to enable other connections aswell such as HTTP and HTTPS:
   `sudo ufw allow 80/tcp`, port 80 being HTTP.
   `sudo ufw allow 443`, 443 being HTTPS.
   
-  Finally to enable firewall and changes we made to it: `sudo ufw enable`.
+  Finally to enable firewall and changes made to it: `sudo ufw enable`.
   
 # DoS protection
   
@@ -163,7 +166,7 @@
   
   Making a configuration file: `sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`.
   
-  Then we need to edit `/etc/fail2ban/jail.local` to change few settings in `[sshd]` and also to create a completely new jail `[http-get-dos]`.
+  Then you need to edit `/etc/fail2ban/jail.local` to change few settings in `[sshd]` and also to create a completely new jail `[http-get-dos]`.
   
     [sshd]
 
@@ -189,7 +192,7 @@
     bantime = 900
     action = iptables[name=HTTP, port=http, protocol=tcp]
   
-  after saving the configuration we need to make a filter for our new jail:
+  after saving the configuration you need to make a filter for your new jail:
   `sudo vim /etc/fail2ban/filter.d/http-get-dos.conf`.
   
   Useful tool to figure out a regex configuration: https://www.regextester.com.
@@ -201,7 +204,7 @@
   
   Save and restart fail2ban: `sudo systemctl restart fail2ban`.
   
-  What I used to test my fail2ban: https://github.com/gkbrk/slowloris.
+  ❗ What I used to test my fail2ban: https://github.com/gkbrk/slowloris.
   
   `python3 slowloris.py 10.13.254.36 --sleeptime 1 -s 500`.
   
@@ -213,7 +216,7 @@
   
   Installing portsentry: `sudo apt-get install portsentry`.
   
-  First we head to `/etc/default/portsentry` and set TCP and UDP modes to advanced:
+  First you head to `/etc/default/portsentry` and set TCP and UDP modes to advanced:
   
     TCP_MODE="atcp"
     UDP_MODE="audp"
@@ -222,13 +225,13 @@
   You can change the default values in `/etec/portsentry/portsentry.conf` on lines 61 and 62,
   but it's not recommended. (see `/etec/portsentry/portsentry.conf` lines 49-58).
   
-  Then editing portsentrys configuration in `/etc/portsentry/portsentry.conf` line 113 onwards, we block UDP/TCP scans,
+  Then editing portsentrys configuration in `/etc/portsentry/portsentry.conf` line 113 onwards, you need to block UDP/TCP scans,
   by changing both number options from 0 ("Do not block UDP/TCP scans") to 1 ("Block UDP/TCP scans").
   
     BLOCK_UDP="1"
     BLOCK_TCP="1"
  
-  We opt for a blocking of malicious persons through iptables. First we comment our current "KILL_ROUTE" and uncomment
+  I opt for a blocking of malicious persons through iptables. First I comment my current "KILL_ROUTE" and uncomment
   the line compatible with iptables: `KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"`.
   
   You can check that you only have 1 "KILL_ROUTE" active with a command: `cat /etc/portsentry/portsentry.conf | grep KILL_ROUTE | grep -v "#"`.
@@ -265,11 +268,11 @@
     
   Remember to add executable rights to the script.
   
-  To make this script run everytime we boot the machine and once a week at 4AM we need to use crontab.
+  To make this script run everytime you boot the machine and once a week at 4AM you can use crontab.
   
   Source: https://crontab-generator.org/.
   
-  Run `sudo crontab -e` to edit our crontab file. In the file we need to add 2 things:
+  Run `sudo crontab -e` to edit your crontab file. In the file you need to add 2 things:
   
     # run auto_update.sh when reboting
     @reboot sh /usr/scripts/auto_update.sh
@@ -299,7 +302,7 @@
     
   It will send a notification to root if machines crontab file has been edited.
   
-  To get started we need to install couple of packages:
+  To get started you need to install couple of packages:
   
   **Mailutils**
   
@@ -311,7 +314,7 @@
   
   The configuration of postfix is located in `/etc/postfix/main.cf`, but you can also use postfixes own command `postconf` to query or configure settings directly.
   
-  We want to edit our mailboxes location with a command `sudo postconf -e "home_mailbox = mail/"`.
+  You want to edit your mailboxes location with a command `sudo postconf -e "home_mailbox = mail/"`.
   
   Restart postfix service with a command: `sudo service postfix restart`.
   
@@ -338,7 +341,7 @@
   You can open your mailbox with a command: `mutt`.
 
 
-  To make our script run itself every day at 00:00, we make a new crontab task with a command: `sudo crontab -e`.
+  To make the script run itself every day at 00:00, make a new crontab task with a command: `sudo crontab -e`.
 
     # run monitor_crontab.sh everyday at 00:00
     0 0 * * * sh /usr/scripts/monitor_crontab.sh
@@ -348,7 +351,9 @@
   
 # Web part
   
-  You were able go with either Nginx or Apache. I chose to go with Apache.
+  You have the possibility go with either Nginx or Apache. 
+  
+  ❗ I chose to go with Apache.
   
   Installing Apache: `sudo apt update && sudo apt-get install apache2`.
   
@@ -377,7 +382,7 @@
   
   source: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-debian-10.
   
-  We can create a self-signed key and certificate pair with OpenSSL in a single command:
+  You can create a self-signed key and certificate pair with OpenSSL in a single command:
   `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt`.
   
   - openssl: This is the basic command line tool for creating and managing OpenSSL certificates, keys, and other files.
@@ -389,9 +394,9 @@
   - keyout: This line tells OpenSSL where to place the generated private key file that we are creating.
   - out: This tells OpenSSL where to place the certificate that we are creating.
 
-  Answer the following question..
+  Answer the following questions..
   
-  Create a new snippet in the `/etc/apache2/conf-available directory`. We will name the file `ssl-params.conf` to make its purpose clear:
+  Create a new snippet in the `/etc/apache2/conf-available directory`. You will name the file `ssl-params.conf` to make its purpose clear:
   `sudo vim /etc/apache2/conf-available/ssl-params.conf`.
   
   Paste this in `ssl-params.conf`:
@@ -517,7 +522,7 @@
   
   `sudo a2enconf ssl-params`.
   
-  At this point, the site and the necessary modules are enabled. We should check to make sure that there are no syntax errors in our files. Do this by typing:
+  At this point, the site and the necessary modules are enabled. You should check to make sure that there are no syntax errors in our files. Do this by typing:
   
   `sudo apache2ctl configtest`.
   
