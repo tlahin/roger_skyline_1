@@ -419,11 +419,11 @@
 
   **Modifying the Default Apache SSL Virtual Host File**
 
-  Before modifying the file take backup of the original SSL Virtual Host file:
+  Before modifying the file, make a backup of the original SSL Virtual Host file:
   
   `sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak`.
   
-  Then we edit our configuration file:
+  To edit your configuration file:
   
   `sudo vim /etc/apache2/sites-available/default-ssl.conf`.
    
@@ -511,7 +511,7 @@
 
   **Enabling the Changes in Apache**
   
-  Enable mod_ssl (the Apache SSL module) and mod_headers, which is needed by some of the settings in our SSL snippet:
+  Enable mod_ssl (the Apache SSL module) and mod_headers, which is needed by some of the settings in your SSL snippet:
   
   `sudo a2enmod ssl` and `sudo a2enmod headers`.
   
@@ -537,7 +537,7 @@
 
   Because the certificate you created isn’t signed by one of your browser’s trusted certificate authorities, you will likely see a scary looking warning.
   
-  This is expected and normal. We are only interested in the encryption aspect of our certificate, not the third party validation of our host’s authenticity. Click ADVANCED and then the link provided to proceed to your host anyways.
+  This is expected and normal. You are only interested in the encryption aspect of our certificate, not the third party validation of your host’s authenticity. Click ADVANCED and then the link provided to proceed to your host anyways.
   
   You should be taken to your site. If you look in the browser address bar, you will see a lock with an “x” over it or another similar “not secure” notice. In this case, this just means that the certificate cannot be validated. It is still encrypting your connection.
   
