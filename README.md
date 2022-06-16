@@ -49,6 +49,8 @@
   - sudo is the group we append to the above options. In this case, it is sudo, but it can be any other group.
   
   - username is the name of the user account you want to add to the sudo group.
+  
+  You can also manage permissions by editing file `/etc/sudoers`.
 
 # Configuring static IP and a Netmask in \30
   
