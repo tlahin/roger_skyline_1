@@ -159,6 +159,8 @@
   
   Finally to enable firewall and changes made to it: `sudo ufw enable`.
   
+  List open ports `sudo netstat -tulpn | grep LISTEN`.
+  
 # DoS protection
   
   sources: 
