@@ -340,7 +340,7 @@
   
   Example: 
   
-    echo "text' | sudo mail -s "subject" <reciver>
+    echo "text" | sudo mail -s "subject" <reciver>
     
   You can open your mailbox with a command: `mutt`.
 
