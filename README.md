@@ -28,7 +28,7 @@
   First task is to set 8 GB of disk size to the VM and atleast one partition to be 4.2 GB
   
   Easily configured during the graphical installation of Debian.
-  It's possible to check the size of the partitions with a command: `sudo fdisk -l`.
+  It's possible to check the size of the partitions with a command: `sudo fdisk -l` or `lsblk`.
  
 # New user and adding sudo rights
 
