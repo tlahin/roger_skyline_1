@@ -32,8 +32,9 @@
   It's possible to check the size of the partitions with a command: `sudo fdisk -l` or `lsblk`.
   
 # Show installed packages on the VM
- 
- sudo apt list --installed
+
+ To list all installed packages on the VM:
+ `sudo apt list --installed`.
  
 # New user and adding sudo rights
 
