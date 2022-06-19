@@ -558,6 +558,8 @@
   If you configured Apache to redirect HTTP to HTTPS, you can also check whether the redirect functions correctly: `http://server_domain_or_IP`.
   
   Now you have configured your Apache server to use strong encryption for client connections. This will allow you to serve requests securely and will prevent outside parties from reading your traffic
+  
+  List enabled sites: `sudo a2query -s`.
 
 # Deployment automatization script
 
