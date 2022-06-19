@@ -4,6 +4,7 @@
   
   - [Installing Virtual Machine](https://github.com/tlahin/roger_skyline_1/blob/main/README.md#installing-virtual-machine-1)
   - [Adding rights to sudo](https://github.com/tlahin/roger_skyline_1#adding-rights-to-sudo)
+  - [Show installed packages on the VM](https://github.com/tlahin/roger_skyline_1/blob/main/README.md#show-installed-packages-on-the-vm)
   - [Configuring static IP and a Netmask in \30](https://github.com/tlahin/roger_skyline_1#configuring-static-ip-and-a-netmask-in-30)
   - [Changing ssh port](https://github.com/tlahin/roger_skyline_1#changing-ssh-ports)
   - [SSH access with public keys and root access](https://github.com/tlahin/roger_skyline_1#ssh-access-with-public-keys-and-root-access)
