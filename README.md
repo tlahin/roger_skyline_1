@@ -474,7 +474,7 @@
     </VirtualHost>
   </IfModule>
   
-  Change settings accordingly: 
+  Change settings accordingly and add redirecting from http:
   
     <IfModule mod_ssl.c>
       <VirtualHost _default_:443>
@@ -500,25 +500,25 @@
         ...
 
 
+        </VirtualHost>
+              <VirtualHost *:80>
+        ....
+
+        Redirect "/" "https://10.13.254.36/"
+
+        ...
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        ...
       </VirtualHost>
     </IfModule>
+    
+    Then rename the default name to something fancy:
+    
+    `sudo mv /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/myssl.conf`.
   
-    **Modifying the HTTP Host File to Redirect to HTTPS**
-  
-  `sudo vim /etc/apache2/sites-available/000-default.conf`.
-  
-      <VirtualHost *:80>
-      ....
-
-      Redirect "/" "https://10.13.254.36/"
-
-      ...
-
-      ErrorLog ${APACHE_LOG_DIR}/error.log
-      CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-      ...
-    </VirtualHost>
 
   **Enabling the Changes in Apache**
   
@@ -528,7 +528,7 @@
   
   Next, enable your SSL Virtual Host with the a2ensite command:
   
-  `sudo a2ensite default-ssl`.
+  `sudo a2ensite myssl`.
   
   You will also need to enable your ssl-params.conf file, to read in the values you’ve set:
   
