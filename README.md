@@ -515,9 +515,9 @@
       </VirtualHost>
     </IfModule>
     
-    Then rename the default name to something fancy:
+   Then rename the default name to something fancy:
     
-    `sudo mv /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/myssl.conf`.
+   `sudo mv /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/myssl.conf`.
   
 
   **Enabling the Changes in Apache**
