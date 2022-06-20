@@ -34,7 +34,10 @@
 # Show installed packages on the VM
 
  To list all installed packages on the VM:
- `sudo apt list --installed`.
+ 
+    sudo apt list --installed
+ 
+ Techs such as `Traefik`, `Docker` or `Vagrant` are forbidden.
  
 # New user and adding sudo rights
 
