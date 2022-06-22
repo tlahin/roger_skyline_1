@@ -112,7 +112,7 @@
       #netmask 255.255.255.252
       gateway 10.13.254.254
   
-  will automatically change it to your choice.
+  will automatically change it to your choice. Remember to comment netmask in this case.
 # Changing SSH port
 
   To edit the SSH settings you can use command: `sudo vim /etc/ssh/sshd_config`
