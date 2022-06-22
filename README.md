@@ -545,6 +545,8 @@
   
   `sudo a2dissite <conf>`.
   
+   List enabled sites: `sudo a2query -s`.
+  
   As long as your output has `Syntax OK` everything is all setup. Now you can restart Apache to implement the changes: `sudo systemctl restart apache2`.
   
   **Testing Encryption**
@@ -565,8 +567,6 @@
   If you configured Apache to redirect HTTP to HTTPS, you can also check whether the redirect functions correctly: `http://server_domain_or_IP`.
   
   Now you have configured your Apache server to use strong encryption for client connections. This will allow you to serve requests securely and will prevent outside parties from reading your traffic
-  
-  List enabled sites: `sudo a2query -s`.
 
 # Deployment automatization script
 
