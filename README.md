@@ -541,6 +541,10 @@
   
   `sudo apache2ctl configtest`.
   
+  Evaluation form mentions that there must be only 1 conf file enabled so disable all the default/unnessesary ones with a command: 
+  
+  `sudo a2dissite <conf>`.
+  
   As long as your output has `Syntax OK` everything is all setup. Now you can restart Apache to implement the changes: `sudo systemctl restart apache2`.
   
   **Testing Encryption**
