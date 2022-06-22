@@ -105,6 +105,14 @@
 
   After saving your new settings, restart networking by using command: `sudo systemctl restart networking`.
   
+  Just changing/adding the CIDR at the end of the address in `/etc/network/interface.d/<network>`:
+  
+      iface enp0s3 inet static
+      address 10.13.254.36/30 <--- ❗
+      #netmask 255.255.255.252
+      gateway 10.13.254.254
+  
+  will automatically change it to your choice.
 # Changing SSH port
 
   To edit the SSH settings you can use command: `sudo vim /etc/ssh/sshd_config`
